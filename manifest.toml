@@ -26,8 +26,8 @@ helpers_version = "2.1"
 architectures = "all"
 multi_instance = true
 
-ldap = "false"
-sso = "false"
+ldap = "not_relevant"
+sso = "not_relevant"
 
 disk = "10M"
 ram.build = "0M"
@@ -55,7 +55,7 @@ ram.runtime = "300M"
     autoupdate.strategy = "latest_forgejo_commit"
 
     [resources.apt]
-    packages = ["php-mbstring", "php-imagick", "imagemagick", "php-curl", "curl", "php-apcu"]
+    packages = ["php8.4-mbstring", "php8.4-imagick", "imagemagick", "php8.4-curl", "curl", "php8.4-apcu"]
 
     [resources.system_user]
 
