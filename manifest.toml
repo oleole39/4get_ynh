@@ -54,6 +54,9 @@ ram.runtime = "300M"
     sha256 = "aba7b090ec3e726d301c51a23fbe0e3763af5b20e603df10bde2ef68a6879572"
     autoupdate.strategy = "latest_forgejo_commit"
 
+    [resources.apt]
+    packages = ["php-mbstring", "php-imagick", "imagemagick", "php-curl", "curl", "php-apcu"]
+
     [resources.system_user]
 
     [resources.install_dir]
