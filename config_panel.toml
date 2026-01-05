@@ -1,0 +1,596 @@
+#:schema https://github.com/YunoHost/apps/raw/main/schemas/config_panel.v1.schema.json
+version = "1.0"
+
+[main]
+
+    [main.settings]
+    name.en = "General Settings"
+    name.fr = "Paramètres généraux"
+
+        [main.settings.server_name]
+        ask.en = "4get server name"
+        ask.en = "Nom du serveur 4get"
+        help.en = "Will be shown pretty much everywhere."
+        help.en = "Affiché un peu partout."
+        type = "string"
+        default = "4get"
+        bind = "SERVER_NAME:__DATA_DIR__/config.php"
+
+        [main.settings.server_short_desc]
+        ask.en = "Server short description"
+        ask.fr = "Description courte du serveur"
+        help.en = "Will be shown in <meta> tag on the home page."
+        help.fr = "Utilisé dans la balise <meta> de la page d'accueil."
+        type = "string"
+        default = "4get is a proxy search engine that doesn't suck."
+        bind = "SERVER_SHORT_DESCRIPTION:__DATA_DIR__/config.php"
+
+        [main.settings.server_long_desc]
+        ask.en = "Server long description"
+        ask.fr = "Description longue du serveur"
+        help.en = "Will be shown in server list ping (null for no description)."
+        help.fr = "Utilisé dans la liste des serveurs."
+        type = "string"
+        default = "" #TODO custom setter which converts empty string to PHP null
+        bind = "SERVER_LONG_DESCRIPTION:__DATA_DIR__/config.php"
+
+        [main.settings.default_theme]
+        ask.en = "Default Theme"
+        ask.fr = "Theme par défaut"
+        help.en = "To use \"__DATA_DIR__/themes/Cream.css\", specify \"Cream\"."
+        help.fr = "Pour utiliser \"__DATA_DIR__/themes/Cream.css\", indiquer \"Cream\"."
+        type = "string"
+        default = "Dark"
+        bind = "DEFAULT_THEME:__DATA_DIR__/config.php"
+
+        [main.settings.api_enabled]
+        ask.en = "Enable 4get API"
+        ask.fr = "Activer l'API 4get"
+        help = "Cf. https://__DOMAIN____PATH__/api.txt"
+        type = "boolean"
+        default = 1
+        bind = "API_ENABLED:__DATA_DIR__/config.php"
+
+        [main.settings.instances]
+        ask.en = "4get instances"
+        ask.fr = "Instances 4get"
+        help.en = "Instances to show in the instances list page (one per line)."
+        help.fr = "Liste d'instances à afficher sur la page listant des instances (une par ligne)."
+        type = "text"
+        bind = "null"
+
+[scrapers]
+name.en = "Scrapers' configuration"
+name.fr = "Configuration des scrapers"
+description.en = "Define API keys (when available) and proxy settings for each scraper."
+description.fr = "Définir les clés d'API (quand disponible) et les réglages de proxys pour chaque scraper."
+optional = true
+
+    [scrapers.fivehpx]
+    name = "500px"
+
+        [scrapers.fivehpx.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_FIVEHPX:__DATA_DIR__/data/config.php
+
+    [scrapers.archiveorg]
+    name = "Archive.org"
+
+        [scrapers.archiveorg.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_ARCHIVEORG:__DATA_DIR__/data/config.php
+
+    [scrapers.baidu]
+    name = "Baidu"
+
+        [scrapers.baidu.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_BAIDU:__DATA_DIR__/data/config.php
+
+    [scrapers.brave]
+    name = "Brave"
+
+        [scrapers.brave.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_BRAVE:__DATA_DIR__/data/config.php
+
+    [scrapers.cara]
+    name = "Cara"
+
+        [scrapers.cara.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_CARA:__DATA_DIR__/data/config.php
+
+    [scrapers.coccoc]
+    name = "Coccoc"
+
+        [scrapers.coccoc.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_COCCOC:__DATA_DIR__/data/config.php
+
+    [scrapers.crowdview]
+    name = "Crowdview"
+
+        [scrapers.crowdview.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_CROWDVIEW:__DATA_DIR__/data/config.php
+
+    [scrapers.curlie]
+    name = "Curlie"
+
+        [scrapers.curlie.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_CURLIE:__DATA_DIR__/data/config.php
+
+    [scrapers.ddg]
+    name = "DuckDuckGo"
+
+        [scrapers.ddg.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_DDG:__DATA_DIR__/data/config.php
+
+    [scrapers.fb]
+    name = "Facebook"
+
+        [scrapers.fb.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_FB:__DATA_DIR__/data/config.php
+
+    [scrapers.flickr]
+    name = "Flickr"
+
+        [scrapers.flickr.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_FLICKR:__DATA_DIR__/data/config.php
+
+    [scrapers.ftm]
+    name = "Find That Meme"
+
+        [scrapers.ftm.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_FTM:__DATA_DIR__/data/config.php
+
+    [scrapers.ghostery]
+    name = "Ghostery"
+
+        [scrapers.ghostery.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_GHOSTERY:__DATA_DIR__/data/config.php
+
+    [scrapers.google]
+    name = "Google"
+
+        [scrapers.google.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_GOOGLE:__DATA_DIR__/data/config.php
+
+    [scrapers.google_api]
+    name = "Google API"
+
+        ## Not used at the moment
+        #~ [scrapers.google_api.api_keys]
+        #~ ask.en = "API keys"
+        #~ ask.fr = "Clés API"
+        #~ help.en = "Enter one key per line. Get keys at https://developers.google.com/custom-search/v1/overview (one per account)."
+        #~ help.fr = "Entrer une clé par ligne. Obtenez des clés via https://developers.google.com/custom-search/v1/overview (une par compte)."
+        #~ type = "text"
+        #~ bind = ":__DATA_DIR__/api_keys/google_api.txt"
+
+        [scrapers.google_api.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_GOOGLE_API:__DATA_DIR__/data/config.php
+
+    [scrapers.google_cse]
+    name = "Google CSE"
+
+        [scrapers.google_cse.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_GOOGLE_CSE:__DATA_DIR__/data/config.php
+
+    [scrapers.greppr]
+    name = "Greppr"
+
+        [scrapers.greppr.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_GREPPR:__DATA_DIR__/data/config.php
+
+    [scrapers.imgur]
+    name = "Imgur"
+
+        [scrapers.imgur.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_IMGUR:__DATA_DIR__/data/config.php
+
+    [scrapers.marginalia]
+    name = "Marginalia"
+
+        [scrapers.marginalia.api_key]
+        ask.en = "API Key"
+        ask.fr = "Clé API"
+        help.en = "Get an API Key at https://www.marginalia.nu/marginalia-search/api/"
+        help.fr = "Obtenez une clé API Key via https://www.marginalia.nu/marginalia-search/api/"
+        type = "string"
+        bind = "MARGINALIA_API_KEY:__DATA_DIR__/data/config.php"
+
+        [scrapers.marginalia.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_MARGINALIA:__DATA_DIR__/data/config.php
+
+    [scrapers.mojeek]
+    name = "Mojeek"
+
+        [scrapers.mojeek.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_MOJEEK:__DATA_DIR__/data/config.php
+
+    [scrapers.mullvad_brave]
+    name = "Mullvad Brave"
+
+        [scrapers.mullvad_brave.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_MULLVAD_BRAVE:__DATA_DIR__/data/config.php
+
+    [scrapers.mullvad_google]
+    name = "Mullvad Google"
+
+        [scrapers.mullvad_google.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_MULLVAD_GOOGLE:__DATA_DIR__/data/config.php
+
+    [scrapers.mwmbl]
+    name = "Mwmbl"
+
+        [scrapers.mwmbl.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_MWMBL:__DATA_DIR__/data/config.php
+
+    [scrapers.naver]
+    name = "Naver"
+
+        [scrapers.naver.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_NAVER:__DATA_DIR__/data/config.php
+
+    [scrapers.odysee]
+    name = "Odysee"
+
+        [scrapers.odysee.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_ODYSEE:__DATA_DIR__/data/config.php
+
+    [scrapers.pinterest]
+    name = "Pinterest"
+
+        [scrapers.pinterest.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_PINTEREST:__DATA_DIR__/data/config.php
+
+    [scrapers.qwant]
+    name = "Qwant"
+
+        [scrapers.qwant.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_QWANT:__DATA_DIR__/data/config.php
+
+    [scrapers.sankakucomplex]
+    name = "Sankaku Complex"
+
+        [scrapers.sankakucomplex.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SANKAKUCOMPLEX:__DATA_DIR__/data/config.php
+
+    [scrapers.sc]
+    name = "Sc"
+
+        [scrapers.sc.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SC:__DATA_DIR__/data/config.php
+
+    [scrapers.s=epiasearch]
+    name = "Sepia Search"
+
+        [scrapers.sepiasearch.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SEPIASEARCH:__DATA_DIR__/data/config.php
+
+    [scrapers.seznam]
+    name = "Seznam"
+
+        [scrapers.seznam.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SEZNAM:__DATA_DIR__/data/config.php
+
+    [scrapers.solofield]
+    name = "Solofield"
+
+        [scrapers.solofield.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SOLOFIELD:__DATA_DIR__/data/config.php
+
+    [scrapers.spotify]
+    name = "Spotify"
+
+        [scrapers.spotify.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SPOTIFY:__DATA_DIR__/data/config.php
+
+    [scrapers.startpage]
+    name = "Startpage"
+
+        [scrapers.startpage.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_STARTPAGE:__DATA_DIR__/data/config.php
+
+    [scrapers.swisscows]
+    name = "Swisscows"
+
+        [scrapers.swisscows.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_SWISSCOWS:__DATA_DIR__/data/config.php
+
+    [scrapers.vimeo]
+    name = "Vimeo"
+
+        [scrapers.vimeo.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_VIMEO:__DATA_DIR__/data/config.php
+
+    [scrapers.vsco]
+    name = "Vsco"
+
+        [scrapers.vsco.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_VSCO:__DATA_DIR__/data/config.php
+
+    [scrapers.wiby]
+    name = "Wiby"
+
+        [scrapers.wiby.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_WIBY:__DATA_DIR__/data/config.php
+
+    [scrapers.yahoo]
+    name = "Yahoo"
+
+        [scrapers.yahoo.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YAHOO:__DATA_DIR__/data/config.php
+
+    [scrapers.yahoo_japan]
+    name = "Yahoo Japan"
+
+        [scrapers.yahoo_japan.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YAHOO_JAPAN:__DATA_DIR__/data/config.php
+
+    [scrapers.yandex_i]
+    name = "Yandex I"
+
+        [scrapers.yandex_i.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YANDEX_I:__DATA_DIR__/data/config.php
+
+    [scrapers.yandex_v]
+    name = "Yandex V"
+
+        [scrapers.yandex_v.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YANDEX_V:__DATA_DIR__/data/config.php
+
+    [scrapers.yandex_w]
+    name = "Yandex W"
+
+        [scrapers.yandex_w.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YANDEX_W:__DATA_DIR__/data/config.php
+
+    [scrapers.yep]
+    name = "Yep"
+
+        [scrapers.yep.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YEP:__DATA_DIR__/data/config.php
+
+    [scrapers.yt]
+    name = "YouTube"
+
+        [scrapers.yt.use_proxies]
+        ask = "Use proxies"
+        help.en = "Defines whether to use proxies for this scraper (else it will use server's IP)"
+        help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
+        type = "boolean"
+        default = 0
+        bind = "PROXY_YT:__DATA_DIR__/data/config.php
+
+[proxies]
+
+    [proxies.list]
+    name.en = "Rotating proxies' list"
+    name.fr = "Liste des proxys tournants"
+    help.en = "Proxies that are used by selected scrapers (cf. scrapers' configuration panel)."
+    help.fr = "Proxies qui sont utilisés par les scrapers sélectionnés (cf. le panneau de configuration des scrapers)."
+
+        [proxies.list.list]
+        ask.en = "Proxies list"
+        ask.fr = "Liste de proxies"
+        help.en = "Specify one proxy per line following this format: <protocol>:<address>:<port>:<username>:<password>.\nAvailable protocols: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
+        help.en = "Indiquez un proxy par ligne au format suivant: <protocole>:<addresse>:<port>:<nom d'utilisateur>:<mot de passe>.\nProtocoles supportés: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
+        type = "text"
+        example = "https:1.2.3.4:6060:john:big_secret_123"
+        bind = "__DATA_DIR__/data/proxies/custom_proxies.txt" #TODO Needs that file exists?

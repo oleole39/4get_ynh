@@ -1,0 +1,62 @@
+#!/bin/bash
+# In simple cases, you don't need a config script.
+
+# With a simple config_panel.toml, you can write in the app settings, in the
+# upstream config file or replace complete files (logo ...) and restart services.
+
+# The config scripts allows you to go further, to handle specific cases
+# (validation of several interdependent fields, specific getter/setter for a value,
+# display dynamic informations or choices, pre-loading of config type .cube... ).
+
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source /usr/share/yunohost/helpers
+
+ynh_abort_if_errors
+
+#=================================================
+# RETRIEVE ARGUMENTS
+#=================================================
+
+data_dir=$(ynh_app_setting_get --key=data_dir)
+config_file="$data_dir/data/config.php"
+
+#=================================================
+# SPECIFIC GETTERS FOR TOML SHORT KEY
+#=================================================
+
+get__instances() {
+    # Display one instance URL per line in the config panel's text area
+    sed -n '/const INSTANCES = \[/,/\];/p' "$config_file" | sed '1d;$d' | sed 's/^[ \t"]*//;s/[ \t",]*$//' #1. Extract, 2. Remove first and last lines, 3. Remove spaces, quotes and commas. 
+}
+
+#=================================================
+# SPECIFIC SETTERS FOR TOML SHORT KEYS
+#=================================================
+
+set__instances() {
+    # Generate the new array block
+    array_block="\tconst INSTANCES = [\n"
+    for url in "${instances[@]}"; do
+      array_block+="\t\t\"$url\",\n"
+    done
+    array_block+="\t];"
+
+    # Replace the old array block with the new one  
+    sed -i "/const INSTANCES = \[/,/\];/c\\$array_block" "$config_file"
+    ynh_store_file_checksum "$config_file"
+}
+
+set__server_long_desc() {
+    if [ -z "$server_long_desc" ]; then
+        $server_long_desc="null"
+    else 
+        $server_long_desc="\"$server_long_desc\""
+    fi
+    ynh_replace --match="^(\s*const SERVER_LONG_DESCRIPTION = ).*;$" --replace="$1$server_long_desc;"  --file="$config_file" 
+}
+
+#=================================================
+ynh_app_config_run "$1"

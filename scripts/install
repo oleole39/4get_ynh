@@ -20,10 +20,20 @@ ynh_setup_source --dest_dir="$install_dir"
 
 chown -R "$app:www-data" "$install_dir"
 
+ynh_safe_rm $install_dir/docker
+
 #=================================================
 # APP INITIAL CONFIGURATION
 #=================================================
 ynh_script_progression "Adding $app's configuration files..."
+
+mv $install_dir/data $data_dir/data
+ynh_safe_rm $install_dir/data
+ln -s $data_dir/data $install_dir/data
+
+mv $install_dir/banner $data_dir/banner
+ynh_safe_rm $install_dir/banner
+ln -s $data_dir/banner $install_dir/banner
 
 #=================================================
 # SYSTEM CONFIGURATION
