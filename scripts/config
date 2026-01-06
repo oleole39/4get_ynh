@@ -27,35 +27,45 @@ config_file="$data_dir/data/config.php"
 # SPECIFIC GETTERS FOR TOML SHORT KEY
 #=================================================
 
-get__instances() {
-    # Display one instance URL per line in the config panel's text area
-    sed -n '/const INSTANCES = \[/,/\];/p' "$config_file" | sed '1d;$d' | sed 's/^[ \t"]*//;s/[ \t",]*$//' #1. Extract, 2. Remove first and last lines, 3. Remove spaces, quotes and commas. 
+get__server_long_desc() {
+    value="$(grep "const SERVER_LONG_DESCRIPTION" "$config_file" | cut -d= -f 2 | sed 's/^\s*//;s/[ ;]*$//g')"
+    if [ "$value" == "null" ]; then
+        echo ""
+    else
+        echo "$value"
+    fi
 }
 
+get__instances() {
+    # Display one instance URL per line in the config panel's text area
+    local urls="$(sed -n '/const INSTANCES = \[/,/\];/p' "$config_file" | sed '1d;$d' | sed 's/^[ \t"]*//' | sed 's/[ \t",]*$/,/')" #1. Extract, 2. Remove first and last lines, 3. Remove spaces, quotes and commas.
+    echo -e "${urls//,/\\n}" #double newline required for proper display in config panel's text input box
+}
 #=================================================
 # SPECIFIC SETTERS FOR TOML SHORT KEYS
 #=================================================
 
+set__server_long_desc() {
+    local content="$server_long_desc"
+    if [ -z "$content" ]; then
+        content="null"
+    else
+        content="\"$content\""
+    fi
+    ynh_replace --match="^\(\s*const SERVER_LONG_DESCRIPTION = \).*;$" --replace="\1$content;"  --file="$config_file"
+}
+
 set__instances() {
+    inst_list=($(echo -e "$instances" | sed 's/\n/ /g'))
     # Generate the new array block
     array_block="\tconst INSTANCES = [\n"
-    for url in "${instances[@]}"; do
+    for url in "${inst_list[@]}"; do
       array_block+="\t\t\"$url\",\n"
     done
     array_block+="\t];"
 
-    # Replace the old array block with the new one  
-    sed -i "/const INSTANCES = \[/,/\];/c\\$array_block" "$config_file"
-    ynh_store_file_checksum "$config_file"
-}
-
-set__server_long_desc() {
-    if [ -z "$server_long_desc" ]; then
-        $server_long_desc="null"
-    else 
-        $server_long_desc="\"$server_long_desc\""
-    fi
-    ynh_replace --match="^(\s*const SERVER_LONG_DESCRIPTION = ).*;$" --replace="$1$server_long_desc;"  --file="$config_file" 
+    sed -i "/^\s*const INSTANCES = \[.*$/,/^\s*\];$/c\\$array_block" "$config_file"
+    #ynh_store_file_checksum "$config_file"
 }
 
 #=================================================
