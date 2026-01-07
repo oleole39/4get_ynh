@@ -1,1 +1,3 @@
-Vous pouvez si vous le souhaitez compléter la configurations avec des proxys tournants: https://git.lolcat.ca/lolcat/4get/src/branch/master/docs/configure.md
+Vous pouvez personnaliser davantage cette application en ajoutant:
+- des thèmes CSS dans `/var/www/__APP__/static/themes/`
+- des bannières dans `/var/www/__APP__/banners/`, qui seront affichées aux visiteurs dans un ordre aléatoire sur la page d'accueil de l'application . Les fichiers doivent être des PNG de 400px (w) * 100px (h).

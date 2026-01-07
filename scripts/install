@@ -20,7 +20,11 @@ ynh_setup_source --dest_dir="$install_dir"
 
 chown -R "$app:www-data" "$install_dir"
 
+# Remove useless directory 
 ynh_safe_rm $install_dir/docker
+
+# Clean upstream links
+ynh_replace --match="<a.*Tor<\/a> • " --replace="" "$install_dir/template/home.html"
 
 #=================================================
 # APP INITIAL CONFIGURATION

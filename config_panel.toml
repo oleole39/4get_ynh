@@ -45,15 +45,6 @@ name.fr = "Configuration générale"
         default = "Dark"
         bind = "DEFAULT_THEME:__DATA_DIR__/data/config.php"
 
-        [main.settings.default_theme]
-        ask.en = "Default Theme"
-        ask.fr = "Theme par défaut"
-        help.en = "To use \"__DATA_DIR__/data/themes/Cream.css\", specify \"Cream\"."
-        help.fr = "Pour utiliser \"__DATA_DIR__/data/themes/Cream.css\", indiquer \"Cream\"."
-        type = "string"
-        default = "Dark"
-        bind = "DEFAULT_THEME:__DATA_DIR__/data/config.php"
-
         [main.settings.api_enabled]
         ask.en = "Enable 4get API"
         ask.fr = "Activer l'API 4get"
@@ -233,7 +224,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
     [scrapers.google_api]
     name = "Google API"
 
-        ## Not used at the moment
+        ## Apparently not used by the app at the moment although available in config file
         #~ [scrapers.google_api.api_keys]
         #~ ask.en = "API keys"
         #~ ask.fr = "Clés API"
@@ -601,8 +592,8 @@ name.fr = "Configuration des proxys"
         [proxies.list.list]
         ask.en = "Proxies list"
         ask.fr = "Liste de proxies"
-        help.en = "Specify one proxy per line following this format: `protocol`:`address`:`port`:`username`:`password`.\nAvailable protocols: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
-        help.fr = "Indiquez un proxy par ligne au format suivant: `protocole`:`addresse`:`port`:`nom d'utilisateur`:`mot de passe`.\nProtocoles supportés: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
+        help.en = "Specify one proxy per line following this format: "`protocol`:`address`:`port`:`username`:`password`".\nAvailable protocols: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
+        help.fr = "Indiquez un proxy par ligne au format suivant: "`protocole`:`addresse`:`port`:`nom d'utilisateur`:`mot de passe`".\nProtocoles supportés: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
         type = "text"
         example = "https:1.3.3.7:6969:abcd:efg\nsocks4:1.2.3.4:8080::\nraw_ip::::"
         bind = "__DATA_DIR__/data/proxies/custom_proxies.txt"
