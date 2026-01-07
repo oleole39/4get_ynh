@@ -11,12 +11,94 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression "Ensuring downward compatibility..."
 
+# Set default values for new settings if any  
+# Since v2025.12.14~ynh1
+server_name=${server_name:-"\"4get\""}
+server_short_description=${server_short_description:-"\"4get is a proxy search engine.\""}
+server_long_description=${server_long_description:-"null"}
+default_theme=${default_theme:-"\"Dark\""}
+api_enabled=${api_enabled:-true}
+instances=${instances:-=(
+        "https://$domain$path"
+		"https://4get.ca"
+		"https://4get.zzls.xyz"
+		"https://4getus.zzls.xyz"
+		"https://4get.silly.computer"
+		"https://4get.konakona.moe"
+		"https://4get.lvkaszus.pl"
+		"https://4g.ggtyler.dev"
+		"https://4get.perennialte.ch"
+		"https://4get.sijh.net"
+		"https://4get.hbubli.cc"
+		"https://4get.plunked.party"
+		"https://4get.etenie.pl"
+		"https://4get.lunar.icu"
+		"https://4get.dcs0.hu"
+		"https://4get.kizuki.lol"
+		"https://4get.psily.garden"
+		"https://search.milivojevic.in.rs"
+		"https://4get.snine.nl"
+		"https://4get.datura.network"
+		"https://4get.neco.lol"
+		"https://4get.lol"
+		"https://4get.ch"
+		"https://4get.edmateo.site"
+		"https://4get.sudovanilla.org"
+		"https://search.mint.lgbt"
+)}
+marginalia_api_key=${marginalia_api_key:-"null"}
+proxy_ddg=${proxy_ddg:-false}
+proxy_yahoo=${proxy_yahoo:-false}
+proxy_yahoo_japan=${proxy_yahoo_japan:-false}
+proxy_brave=${proxy_brave:-false}
+proxy_fb=${proxy_fb:-false}
+proxy_google=${proxy_google:-false}
+proxy_google_api=${proxy_google_api:-false}
+proxy_google_cse=${proxy_google_cse:-false}
+proxy_mullvad_google=${proxy_mullvad_google:-false}
+proxy_mullvad_brave=${proxy_mullvad_brave:-false}
+proxy_startpage=${proxy_startpage:-false}
+proxy_qwant=${proxy_qwant:-false}
+proxy_baidu=${proxy_baidu:-false}
+proxy_coccoc=${proxy_coccoc:-false}
+proxy_ghostery=${proxy_ghostery:-false}
+proxy_marginalia=${proxy_marginalia:-false}
+proxy_mojeek=${proxy_mojeek:-false}
+proxy_sc=${proxy_sc:-false}
+proxy_swisscows=${proxy_swisscows:-false}
+proxy_spotify=${proxy_spotify:-false}
+proxy_solofield=${proxy_solofield:-false}
+proxy_wiby=${proxy_wiby:-false}
+proxy_curlie=${proxy_curlie:-false}
+proxy_yt=${proxy_yt:-false}
+proxy_archiveorg=${proxy_archiveorg:-false}
+proxy_sepiasearch=${proxy_sepiasearch:-false}
+proxy_odysee=${proxy_odysee:-false}
+proxy_vimeo=${proxy_vimeo:-false}
+proxy_yep=${proxy_yep:-false}
+proxy_pinterest=${proxy_pinterest:-false}
+proxy_sankakucomplex=${proxy_sankakucomplex:-false}
+proxy_flickr=${proxy_flickr:-false}
+proxy_fivehpx=${proxy_fivehpx:-false}
+proxy_vsco=${proxy_vsco:-false}
+proxy_seznam=${proxy_seznam:-false}
+proxy_naver=${proxy_naver:-false}
+proxy_greppr=${proxy_greppr:-false}
+proxy_crowdview=${proxy_crowdview:-false}
+proxy_mwmbl=${proxy_mwmbl:-false}
+proxy_ftm=${proxy_ftm:-false}
+proxy_imgur=${proxy_imgur:-false}
+proxy_cara=${proxy_cara:-false}
+proxy_yandex_w=${proxy_yandex_w:-false}
+proxy_yandex_i=${proxy_yandex_i:-false}
+proxy_yandex_v=${proxy_yandex_v:-false}
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
-ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="data banner" #keep symlinks
+ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="$install_dir/data/proxies/custom_proxies.txt"
 
 chown -R "$app:www-data" "$install_dir"
 
@@ -30,6 +112,12 @@ ynh_replace --match="^.*onion\">Tor.*$" --replace="" --file="$install_dir/templa
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression "Updating $app's configuration files..."
+
+ynh_config_add --template="config.php" --destination="$install_dir/data/config.php"
+
+# Set restrictive permissions for private resources
+chown -R "$app:$app" "$install_dir/data"
+chmod -R 400 $install_dir/data
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
