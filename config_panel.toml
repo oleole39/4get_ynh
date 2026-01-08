@@ -16,7 +16,7 @@ name.fr = "Configuration générale"
         help.fr = "Affiché un peu partout."
         type = "string"
         default = "4get"
-        bind = "SERVER_NAME:__DATA_DIR__/data/config.php"
+        bind = "SERVER_NAME:__INSTALL_DIR__/data/config.php"
 
         [main.settings.server_short_desc]
         ask.en = "Server short description"
@@ -25,7 +25,7 @@ name.fr = "Configuration générale"
         help.fr = "Utilisé dans la balise <meta> de la page d'accueil."
         type = "string"
         default = "4get is a proxy search engine that doesn't suck."
-        bind = "SERVER_SHORT_DESCRIPTION:__DATA_DIR__/data/config.php"
+        bind = "SERVER_SHORT_DESCRIPTION:__INSTALL_DIR__/data/config.php"
 
         [main.settings.server_long_desc]
         ask.en = "Server long description"
@@ -43,7 +43,7 @@ name.fr = "Configuration générale"
         help.fr = "Pour utiliser `/var/www/__APP__/static/themes/Cream.css`, indiquer `Cream`."
         type = "string"
         default = "Dark"
-        bind = "DEFAULT_THEME:__DATA_DIR__/data/config.php"
+        bind = "DEFAULT_THEME:__INSTALL_DIR__/data/config.php"
 
         [main.settings.api_enabled]
         ask.en = "Enable 4get API"
@@ -51,7 +51,7 @@ name.fr = "Configuration générale"
         help = "Cf. https://__DOMAIN____PATH__/api.txt"
         type = "boolean"
         default = 1
-        bind = "API_ENABLED:__DATA_DIR__/data/config.php"
+        bind = "API_ENABLED:__INSTALL_DIR__/data/config.php"
 
         [main.settings.instances]
         ask.en = "4get instances"
@@ -76,7 +76,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_FIVEHPX:__DATA_DIR__/data/config.php"
+        bind = "PROXY_FIVEHPX:__INSTALL_DIR__/data/config.php"
 
     [scrapers.archiveorg]
     name = "Archive.org"
@@ -87,7 +87,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_ARCHIVEORG:__DATA_DIR__/data/config.php"
+        bind = "PROXY_ARCHIVEORG:__INSTALL_DIR__/data/config.php"
 
     [scrapers.baidu]
     name = "Baidu"
@@ -98,7 +98,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_BAIDU:__DATA_DIR__/data/config.php"
+        bind = "PROXY_BAIDU:__INSTALL_DIR__/data/config.php"
 
     [scrapers.brave]
     name = "Brave"
@@ -109,7 +109,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_BRAVE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_BRAVE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.cara]
     name = "Cara"
@@ -120,7 +120,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_CARA:__DATA_DIR__/data/config.php"
+        bind = "PROXY_CARA:__INSTALL_DIR__/data/config.php"
 
     [scrapers.coccoc]
     name = "Coccoc"
@@ -131,7 +131,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_COCCOC:__DATA_DIR__/data/config.php"
+        bind = "PROXY_COCCOC:__INSTALL_DIR__/data/config.php"
 
     [scrapers.crowdview]
     name = "Crowdview"
@@ -142,7 +142,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_CROWDVIEW:__DATA_DIR__/data/config.php"
+        bind = "PROXY_CROWDVIEW:__INSTALL_DIR__/data/config.php"
 
     [scrapers.curlie]
     name = "Curlie"
@@ -153,7 +153,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_CURLIE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_CURLIE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.ddg]
     name = "DuckDuckGo"
@@ -164,7 +164,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_DDG:__DATA_DIR__/data/config.php"
+        bind = "PROXY_DDG:__INSTALL_DIR__/data/config.php"
 
     [scrapers.fb]
     name = "Facebook"
@@ -175,7 +175,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_FB:__DATA_DIR__/data/config.php"
+        bind = "PROXY_FB:__INSTALL_DIR__/data/config.php"
 
     [scrapers.flickr]
     name = "Flickr"
@@ -186,7 +186,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_FLICKR:__DATA_DIR__/data/config.php"
+        bind = "PROXY_FLICKR:__INSTALL_DIR__/data/config.php"
 
     [scrapers.ftm]
     name = "Find That Meme"
@@ -197,7 +197,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_FTM:__DATA_DIR__/data/config.php"
+        bind = "PROXY_FTM:__INSTALL_DIR__/data/config.php"
 
     [scrapers.ghostery]
     name = "Ghostery"
@@ -208,7 +208,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_GHOSTERY:__DATA_DIR__/data/config.php"
+        bind = "PROXY_GHOSTERY:__INSTALL_DIR__/data/config.php"
 
     [scrapers.google]
     name = "Google"
@@ -219,7 +219,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_GOOGLE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_GOOGLE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.google_api]
     name = "Google API"
@@ -231,7 +231,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         #~ help.en = "Enter one key per line. Get keys at https://developers.google.com/custom-search/v1/overview (one per account)."
         #~ help.fr = "Entrer une clé par ligne. Obtenez des clés via https://developers.google.com/custom-search/v1/overview (une par compte)."
         #~ type = "text"
-        #~ bind = ":__DATA_DIR__/api_keys/google_api.txt"
+        #~ bind = ":__INSTALL_DIR__/api_keys/google_api.txt"
 
         [scrapers.google_api.use_proxies]
         ask = "Use proxies"
@@ -239,7 +239,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_GOOGLE_API:__DATA_DIR__/data/config.php"
+        bind = "PROXY_GOOGLE_API:__INSTALL_DIR__/data/config.php"
 
     [scrapers.google_cse]
     name = "Google CSE"
@@ -250,7 +250,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_GOOGLE_CSE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_GOOGLE_CSE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.greppr]
     name = "Greppr"
@@ -261,7 +261,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_GREPPR:__DATA_DIR__/data/config.php"
+        bind = "PROXY_GREPPR:__INSTALL_DIR__/data/config.php"
 
     [scrapers.imgur]
     name = "Imgur"
@@ -272,7 +272,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_IMGUR:__DATA_DIR__/data/config.php"
+        bind = "PROXY_IMGUR:__INSTALL_DIR__/data/config.php"
 
     [scrapers.marginalia]
     name = "Marginalia"
@@ -283,7 +283,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.en = "Get an API Key at https://www.marginalia.nu/marginalia-search/api/"
         help.fr = "Obtenez une clé API Key via https://www.marginalia.nu/marginalia-search/api/"
         type = "string"
-        bind = "MARGINALIA_API_KEY:__DATA_DIR__/data/config.php"
+        bind = "MARGINALIA_API_KEY:__INSTALL_DIR__/data/config.php"
 
         [scrapers.marginalia.use_proxies]
         ask = "Use proxies"
@@ -291,7 +291,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_MARGINALIA:__DATA_DIR__/data/config.php"
+        bind = "PROXY_MARGINALIA:__INSTALL_DIR__/data/config.php"
 
     [scrapers.mojeek]
     name = "Mojeek"
@@ -302,7 +302,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_MOJEEK:__DATA_DIR__/data/config.php"
+        bind = "PROXY_MOJEEK:__INSTALL_DIR__/data/config.php"
 
     [scrapers.mullvad_brave]
     name = "Mullvad Brave"
@@ -313,7 +313,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_MULLVAD_BRAVE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_MULLVAD_BRAVE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.mullvad_google]
     name = "Mullvad Google"
@@ -324,7 +324,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_MULLVAD_GOOGLE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_MULLVAD_GOOGLE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.mwmbl]
     name = "Mwmbl"
@@ -335,7 +335,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_MWMBL:__DATA_DIR__/data/config.php"
+        bind = "PROXY_MWMBL:__INSTALL_DIR__/data/config.php"
 
     [scrapers.naver]
     name = "Naver"
@@ -346,7 +346,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_NAVER:__DATA_DIR__/data/config.php"
+        bind = "PROXY_NAVER:__INSTALL_DIR__/data/config.php"
 
     [scrapers.odysee]
     name = "Odysee"
@@ -357,7 +357,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_ODYSEE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_ODYSEE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.pinterest]
     name = "Pinterest"
@@ -368,7 +368,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_PINTEREST:__DATA_DIR__/data/config.php"
+        bind = "PROXY_PINTEREST:__INSTALL_DIR__/data/config.php"
 
     [scrapers.qwant]
     name = "Qwant"
@@ -379,7 +379,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_QWANT:__DATA_DIR__/data/config.php"
+        bind = "PROXY_QWANT:__INSTALL_DIR__/data/config.php"
 
     [scrapers.sankakucomplex]
     name = "Sankaku Complex"
@@ -390,7 +390,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SANKAKUCOMPLEX:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SANKAKUCOMPLEX:__INSTALL_DIR__/data/config.php"
 
     [scrapers.sc]
     name = "SoundCloud"
@@ -401,7 +401,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SC:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SC:__INSTALL_DIR__/data/config.php"
 
     [scrapers.sepiasearch]
     name = "Sepia Search"
@@ -412,7 +412,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SEPIASEARCH:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SEPIASEARCH:__INSTALL_DIR__/data/config.php"
 
     [scrapers.seznam]
     name = "Seznam"
@@ -423,7 +423,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SEZNAM:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SEZNAM:__INSTALL_DIR__/data/config.php"
 
     [scrapers.solofield]
     name = "Solofield"
@@ -434,7 +434,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SOLOFIELD:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SOLOFIELD:__INSTALL_DIR__/data/config.php"
 
     [scrapers.spotify]
     name = "Spotify"
@@ -445,7 +445,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SPOTIFY:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SPOTIFY:__INSTALL_DIR__/data/config.php"
 
     [scrapers.startpage]
     name = "Startpage"
@@ -456,7 +456,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_STARTPAGE:__DATA_DIR__/data/config.php"
+        bind = "PROXY_STARTPAGE:__INSTALL_DIR__/data/config.php"
 
     [scrapers.swisscows]
     name = "Swisscows"
@@ -467,7 +467,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_SWISSCOWS:__DATA_DIR__/data/config.php"
+        bind = "PROXY_SWISSCOWS:__INSTALL_DIR__/data/config.php"
 
     [scrapers.vimeo]
     name = "Vimeo"
@@ -478,7 +478,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_VIMEO:__DATA_DIR__/data/config.php"
+        bind = "PROXY_VIMEO:__INSTALL_DIR__/data/config.php"
 
     [scrapers.vsco]
     name = "VSCO"
@@ -489,7 +489,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_VSCO:__DATA_DIR__/data/config.php"
+        bind = "PROXY_VSCO:__INSTALL_DIR__/data/config.php"
 
     [scrapers.wiby]
     name = "Wiby"
@@ -500,7 +500,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_WIBY:__DATA_DIR__/data/config.php"
+        bind = "PROXY_WIBY:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yahoo]
     name = "Yahoo"
@@ -511,7 +511,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YAHOO:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YAHOO:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yahoo_japan]
     name = "Yahoo Japan"
@@ -522,7 +522,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YAHOO_JAPAN:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YAHOO_JAPAN:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yandex_i]
     name = "Yandex Images"
@@ -533,7 +533,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YANDEX_I:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YANDEX_I:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yandex_v]
     name = "Yandex Videos"
@@ -544,7 +544,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YANDEX_V:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YANDEX_V:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yandex_w]
     name = "Yandex Web"
@@ -555,7 +555,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YANDEX_W:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YANDEX_W:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yep]
     name = "Yep"
@@ -566,7 +566,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YEP:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YEP:__INSTALL_DIR__/data/config.php"
 
     [scrapers.yt]
     name = "YouTube"
@@ -577,7 +577,7 @@ help.fr = "Définir les clés d'API (quand disponible) et les réglages de proxy
         help.fr = "Définit s'il faut avoir recours aux proxies pour ce scraper (sinon l'IP du serveur sera utilisée)"
         type = "boolean"
         default = 0
-        bind = "PROXY_YT:__DATA_DIR__/data/config.php"
+        bind = "PROXY_YT:__INSTALL_DIR__/data/config.php"
 
 [proxies]
 name.en = "Proxies configuration"
@@ -596,4 +596,4 @@ name.fr = "Configuration des proxys"
         help.fr = "Indiquez un proxy par ligne au format suivant: \"`protocole`:`addresse`:`port`:`nom d'utilisateur`:`mot de passe`\".\nProtocoles supportés: raw_ip, http, https, socks4, socks5, socks4a, socks5_hostname."
         type = "text"
         example = "https:1.3.3.7:6969:abcd:efg\nsocks4:1.2.3.4:8080::\nraw_ip::::"
-        bind = "__DATA_DIR__/data/proxies/custom_proxies.txt"
+        bind = "__INSTALL_DIR__/data/proxies/custom_proxies.txt"
