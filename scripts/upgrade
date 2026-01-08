@@ -117,7 +117,7 @@ ynh_config_add --template="config.php" --destination="$install_dir/data/config.p
 
 # Set restrictive permissions for private resources
 chown -R "$app:$app" "$install_dir/data"
-chmod -R 400 $install_dir/data
+chmod -R 400 $install_dir/data/*
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION

@@ -120,7 +120,7 @@ touch $install_dir/data/proxies/custom_proxies.txt
 
 # Set restrictive permissions for private resources
 chown -R "$app:$app" "$install_dir/data"
-chmod -R 400 $install_dir/data
+chmod -R 400 $install_dir/data/*
 
 #=================================================
 # SYSTEM CONFIGURATION
