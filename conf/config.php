@@ -98,11 +98,11 @@ class config{
 	// false = Use server's raw IP
 	// string = will load a proxy list from data/proxies
 	// Eg. "onion" will load data/proxies/onion.txt
-	const PROXY_DDG = __PROXY_DDG__ // duckduckgo;
+	const PROXY_DDG = __PROXY_DDG__; // duckduckgo;
 	const PROXY_YAHOO = __PROXY_YAHOO__;
 	const PROXY_YAHOO_JAPAN = __PROXY_YAHOO_JAPAN__;
 	const PROXY_BRAVE = __PROXY_BRAVE__;
-	const PROXY_FB = __PROXY_FB__ // facebook;
+	const PROXY_FB = __PROXY_FB__; // facebook;
 	const PROXY_GOOGLE = __PROXY_GOOGLE__;
 	const PROXY_GOOGLE_API = __PROXY_GOOGLE_API__;
 	const PROXY_GOOGLE_CSE = __PROXY_GOOGLE_CSE__;
@@ -115,13 +115,13 @@ class config{
 	const PROXY_GHOSTERY = __PROXY_GHOSTERY__;
 	const PROXY_MARGINALIA = __PROXY_MARGINALIA__;
 	const PROXY_MOJEEK = __PROXY_MOJEEK__;
-	const PROXY_SC = __PROXY_SC__ // soundcloud;
+	const PROXY_SC = __PROXY_SC__; // soundcloud;
 	const PROXY_SWISSCOWS = __PROXY_SWISSCOWS__;
 	const PROXY_SPOTIFY = __PROXY_SPOTIFY__;
 	const PROXY_SOLOFIELD = __PROXY_SOLOFIELD__;
 	const PROXY_WIBY = __PROXY_WIBY__;
 	const PROXY_CURLIE = __PROXY_CURLIE__;
-	const PROXY_YT = __PROXY_YT__ // youtube;
+	const PROXY_YT = __PROXY_YT__; // youtube;
 	const PROXY_ARCHIVEORG = __PROXY_ARCHIVEORG__;
 	const PROXY_SEPIASEARCH = __PROXY_SEPIASEARCH__;
 	const PROXY_ODYSEE = __PROXY_ODYSEE__;
@@ -137,12 +137,12 @@ class config{
 	const PROXY_GREPPR = __PROXY_GREPPR__;
 	const PROXY_CROWDVIEW = __PROXY_CROWDVIEW__;
 	const PROXY_MWMBL = __PROXY_MWMBL__;
-	const PROXY_FTM = __PROXY_FTM__ // findthatmeme;
+	const PROXY_FTM = __PROXY_FTM__; // findthatmeme;
 	const PROXY_IMGUR = __PROXY_IMGUR__;
 	const PROXY_CARA = __PROXY_CARA__;
-	const PROXY_YANDEX_W = __PROXY_YANDEX_W__ // yandex web;
-	const PROXY_YANDEX_I = __PROXY_YANDEX_I__ // yandex images;
-	const PROXY_YANDEX_V = __PROXY_YANDEX_V__ // yandex videos;
+	const PROXY_YANDEX_W = __PROXY_YANDEX_W__; // yandex web;
+	const PROXY_YANDEX_I = __PROXY_YANDEX_I__; // yandex images;
+	const PROXY_YANDEX_V = __PROXY_YANDEX_V__; // yandex videos;
 	
 	//
 	// Scraper-specific parameters
